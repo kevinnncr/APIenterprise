@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://isabelle.db.elephantsql.com:5432/kovwaywx?socketTimeout=3
+    username: kovwaywx
+    password: 5gCM3I3epMGQoNUf8xN-1msJG96fuI6Q
+    driverClassName: org.postgresql.Driver
